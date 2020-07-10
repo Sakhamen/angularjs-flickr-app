@@ -1,0 +1,27 @@
+body {
+  margin-bottom: 56px !important;
+}
+
+.featurette-divider {
+  margin: 2rem 0;
+}
+
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.05rem;
+  margin-bottom: 2rem;
+}
+
+
+@media (min-width: 40em) {
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 3rem;
+  }
+}
