@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="flickr" class="no-js">
+   <head>
+      <meta charset="utf-8" />
+      <title>Flickr - AngularJS</title>
+      <meta name="description" content="A flickr app with AngularJS and Bootstrap 4">
+      <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+       <!-- Styles -->
+       <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css">
+      <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css">
+      <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css" />
+      <link rel="stylesheet" type="text/css" href="styles/style.css" />
+   </head>
+
+   <body>
+      <!--[if lt IE 7]>
+         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+     <![endif]-->
+
+     <div ng-include="'components/navbar.html'" ></div>
+
+     <!-- Main view for templates -->
+     <div ng-view class="container-fluid"></div>
+
+     <footer class="fixed-bottom bg-dark">
+       <div class="container text-center mt-3">
+         <p class="text-info">Developed by <a href="https://github.com/sakhamen" target="_blank">Sakhamen</a></p>
+       </div>
+     </footer>
+
+   </body>
+
+   <!-- 3rd party scripts -->
+   <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+   <script src="lib/angular/angular.js"></script>
+   <script src="lib/angular-route/angular-route.js"></script>
+
+   <!-- App sections -->
+   <script type="text/javascript" src="scripts/app.js"></script>
+   <script type="text/javascript" src="scripts/services/service.js"></script>
+   <script type="text/javascript" src="scripts/controllers/controller.js"></script>
+   <script type="text/javascript" src="scripts/services/config.js"></script>
+
+</html>
