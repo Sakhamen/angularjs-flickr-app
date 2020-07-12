@@ -1,0 +1,64 @@
+<!-- Geolocation error -->
+<div class="alert alert-danger mt-2" role="alert" ng-if="isGeoError">
+  Unable to retrieve your location, please allow location access. <a href ng-click="reloadPage()" class="alert-link">refresh this page</a> with f5.
+</div>
+
+<div class="row mt-2">
+   <!-- Search or Geolocation Form -->
+   <div class="col-md-6 col-sm-12 order-md-2">
+      <div class="row">
+         <!-- location button -->
+         <div class="col-md-auto col-sm-12">
+            <div class="mt-1 ml-1">
+               <button type="button" class="btn btn-secondary btn-block" ng-click="getCurrentLocation()">Get Current Location</button>
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+               <div class="spinner-grow" role="status" ng-if="isGeoSearch">
+                 <span class="sr-only">Loading...</span>
+               </div>
+            </div>
+
+         </div>
+         <div class="mt-1 col-md-auto col-sm-12">
+            <span class="d-flex justify-content-center">OR</span>
+         </div>
+         <!-- text input -->
+         <div class="col-md-auto col-sm-12">
+           <form class="form-inline" ng-submit="search()">
+              <div class="form-group mx-sm-3 mb-2">
+                <label for="userInput" class="sr-only">Location</label>
+                <input id="userInput" class="form-control" ng-model="searchTerm" placeholder="Enter a location" required>
+              </div>
+              <button type="submit" class="btn btn-primary mb-2">Search</button>
+            </form>
+            <div class="d-flex justify-content-center mt-2">
+               <div class="spinner-border" role="status" ng-if="isTextSearch">
+                 <span class="sr-only">Loading...</span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- Top locations -->
+   <div class="col-md-3 col-sm-12">
+      <h4>Top Locations</h4>
+      <div class="list-group">
+        <a href ng-click="navigate('Durban')" class="list-group-item list-group-item-action">Durban</a>
+        <a href ng-click="navigate('Johannesburg')" class="list-group-item list-group-item-action">Johannesburg</a>
+        <a href ng-click="navigate('Cape Town')" class="list-group-item list-group-item-action">Cape Town</a>
+        <a href ng-click="navigate('Western Cape')" class="list-group-item list-group-item-action">Western Cape</a>
+        <a href ng-click="navigate('Suncity')" class="list-group-item list-group-item-action">Suncity</a>
+      </div>
+   </div>
+
+   <!-- Recent Search -->
+   <div class="col-md-3 col-sm-12 mt-1 order-3" ng-if="prevSearch.length">
+      <h6>Your Search History</h6>
+      <div class="list-group">
+        <a href class="list-group-item list-group-item-action" ng-repeat="name in prevSearch track by $index" ng-click="navigate(name)">
+          {{name}}
+        </a>
+      </div>
+   </div>
+</div>

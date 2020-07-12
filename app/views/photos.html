@@ -1,0 +1,18 @@
+<div class="text-center mt-2" ng-if="isEmpty">
+  <h1>Sorry, we couldn't find any photos of "<span class="highlight">{{locationName || 'current location'}}</span>." Try searching for something else.</h1>
+  <button class="btn btn-danger" ng-click="back()">Conduct a New Search</button>
+</div>
+
+<h1 class="text-center" ng-if="!isEmpty">{{locationName || 'Around Me'}} Photos</h1>
+
+<div class="row">
+  <div class="col-lg-4 col-md-6 col-sm-12 p-3" ng-repeat="image in photos">
+    <div class="card">
+      <img class="card-img-top" alt="{{image.title}}" ng-src="{{getImageSrc(image)}}">
+      <div class="card-body">
+        <h5 class="card-title">{{image.title}}</h5>
+        <a class="btn btn-secondary" ng-href="#!/photo/{{image.id}}">Learn More</a>
+      </div>
+    </div>
+  </div>
+</div>
